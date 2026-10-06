@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon HK Clone</title>
+    <!-- The only stylesheet: presentation is separated into css/style.css and linked here (no embedded style) -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body id="page-top">
+    <!-- Block 1: Top navigation bar - full-width black strip with the logo, the search box and the account / returns / cart links -->
+    <div class="top-nav">
+      <div class="nav-inner">
+        <!-- Account, Returns and Cart group: floated to the far right of the bar -->
+        <div class="nav-right">
+          <a href="#" class="nav-item">
+            <span class="caption">Hello, sign in</span>
+            <span class="label">Account &amp; Lists</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="caption">Returns</span>
+            <span class="label">&amp; Orders</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="caption">Cart</span>
+            <span class="label">0 items</span>
+          </a>
+        </div>
+        <!-- End of account / returns / cart group -->
+
+        <!-- Text logo floated to the left edge of the bar -->
+        <a href="#" class="logo">amazon</a>
+
+        <!-- Delivery destination block floated next to the logo -->
+        <a href="#" class="nav-item deliver-to">
+          <span class="caption">Deliver to</span>
+          <span class="label">Hong Kong</span>
+        </a>
+
+        <!-- Search bar: floated block that groups the category dropdown, the text field and the search button -->
+        <form class="search-bar" action="#">
+          <select name="category">
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Books</option>
+            <option>Fashion</option>
+          </select>
+          <input id="searchInput" type="text" name="keyword" />
+          <button type="submit">&#128269;</button>
+        </form>
+        <!-- End of search bar -->
+      </div>
+    </div>
+    <!-- End of Block 1: top navigation bar -->
+
+    <!-- Block 2: Secondary navigation bar - full-width dark blue strip carrying the "All" menu and the category links -->
+    <div class="sub-nav">
+      <!-- "All" menu button floated to the left -->
+      <span class="all-menu">&#9776; All</span>
+      <!-- Category link list, each item floated horizontally into the same row -->
+      <ul class="sub-menu">
+        <li><a href="#">Amazon Bazaar</a></li>
+        <li><a href="#">Prime Video</a></li>
+        <li><a href="#">Coupons</a></li>
+        <li><a href="#">Customer Service</a></li>
+        <li><a href="#">Today's Deals</a></li>
+        <li><a href="#">Registry</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">Sell</a></li>
+      </ul>
+      <!-- End of category link list -->
+    </div>
+    <!-- End of Block 2: secondary navigation bar -->
+
+    <!-- Block 3: Promotional banner strip - five promo banners floated side by side inside the centred container -->
+    <div class="container">
+      <div class="banner-row">
+        <!-- Banner 1: Beyblade X toys promotion -->
+        <div class="banner-card">
+          <div class="banner-body">
+            <img src="img/banner1.jpg" alt="Beyblade X toys" />
+            <h3>Beyblade X toys</h3>
+            <p>Shop the collection</p>
+          </div>
+        </div>
+        <!-- End of banner 1 -->
+
+        <!-- Banner 2: free international delivery promotion -->
+        <div class="banner-card">
+          <div class="banner-body">
+            <img src="img/banner2.jpg" alt="Free international delivery" />
+            <h3>Free international delivery</h3>
+            <p>Save on qualifying orders</p>
+          </div>
+        </div>
+        <!-- End of banner 2 -->
+
+        <!-- Banner 3: Kindle reading promotion -->
+        <div class="banner-card">
+          <div class="banner-body">
+            <img src="img/banner3.jpg" alt="The next chapter in reading" />
+            <h3>The next chapter in reading</h3>
+            <p>kindle</p>
+          </div>
+        </div>
+        <!-- End of banner 3 -->
+
+        <!-- Banner 4: Prime Video new movie promotion -->
+        <div class="banner-card">
+          <div class="banner-body">
+            <img src="img/banner4.jpg" alt="New movie" />
+            <h3>New movie</h3>
+            <p>Watch on Prime Video</p>
+          </div>
+        </div>
+        <!-- End of banner 4 -->
+
+        <!-- Banner 5: crazy low prices promotion -->
+        <div class="banner-card">
+          <div class="banner-body">
+            <img src="img/banner5.jpg" alt="Crazy low prices" />
+            <h3>Crazy low prices</h3>
+            <p>Everything $20 and above</p>
+          </div>
+        </div>
+        <!-- End of banner 5 -->
+
+        <!-- Extra clearing tag: carries the floated banner cards so the row keeps its height (float-clearing method 1) -->
+        <div class="clear"></div>
+      </div>
+    </div>
+    <!-- End of Block 3: promotional banner strip -->
+
+    <!-- Block 4: Category card row 1 - four floated columns, each white card holds a title and a 2 x 2 picture grid -->
+    <div class="container">
+      <div class="card-row clearfix">
+        <!-- Column 1: electronics category -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>Plug in with our electronics</h3>
+            <!-- Small row 1 of the electronics card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card1.jpg" alt="Headphones" />
+                <p>Headphones</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card2.jpg" alt="Tablets" />
+                <p>Tablets</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the electronics card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card3.jpg" alt="Gaming" />
+                <p>Gaming</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card4.jpg" alt="Speakers" />
+                <p>Speakers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 1 -->
+
+        <!-- Column 2: PC and accessories category -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>Score the top PCs &amp; Accessories</h3>
+            <!-- Small row 1 of the PC card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card5.jpg" alt="Desktops" />
+                <p>Desktops</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card6.jpg" alt="Laptops" />
+                <p>Laptops</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the PC card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card7.jpg" alt="Hard Drives" />
+                <p>Hard Drives</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card8.jpg" alt="PC Accessories" />
+                <p>PC Accessories</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 2 -->
+
+        <!-- Column 3: fitness gear category -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>Gear up to get fit</h3>
+            <!-- Small row 1 of the fitness card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card9.jpg" alt="Clothing" />
+                <p>Clothing</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card10.jpg" alt="Trackers" />
+                <p>Trackers</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the fitness card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card11.jpg" alt="Equipment" />
+                <p>Equipment</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card12.jpg" alt="Deals" />
+                <p>Deals</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 3 -->
+
+        <!-- Column 4: apparel category -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>Apparel under $25</h3>
+            <!-- Small row 1 of the apparel card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card13.jpg" alt="Women" />
+                <p>Women</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card14.jpg" alt="Men" />
+                <p>Men</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the apparel card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card15.jpg" alt="Girls" />
+                <p>Girls</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card16.jpg" alt="Boys" />
+                <p>Boys</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 4 -->
+      </div>
+    </div>
+    <!-- End of Block 4: category card row 1 -->
+
+    <!-- Block 5: Category card row 2 - second row of four floated category cards, same structure as Block 4 -->
+    <div class="container">
+      <div class="card-row clearfix">
+        <!-- Column 1: new home arrivals -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>New home arrivals under $50</h3>
+            <!-- Small row 1 of the home card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card21.jpg" alt="Kitchen and dining" />
+                <p>Kitchen &amp; dining</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card22.jpg" alt="Home improvement" />
+                <p>Home improvement</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the home card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card23.jpg" alt="Decor" />
+                <p>D&eacute;cor</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card24.jpg" alt="Bedding and bath" />
+                <p>Bedding &amp; bath</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 1 -->
+
+        <!-- Column 2: latest arrivals -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>Discover the latest arrivals</h3>
+            <!-- Small row 1 of the arrivals card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card25.jpg" alt="Electronics" />
+                <p>Electronics</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card26.jpg" alt="Home" />
+                <p>Home</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the arrivals card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card27.jpg" alt="Beauty" />
+                <p>Beauty</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card28.jpg" alt="Fashion" />
+                <p>Fashion</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 2 -->
+
+        <!-- Column 3: accessories -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>Accessorize your life</h3>
+            <!-- Small row 1 of the accessories card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card29.jpg" alt="Fashion accessories" />
+                <p>Fashion accessories</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card30.jpg" alt="Men's accessories" />
+                <p>Men's accessories</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the accessories card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card31.jpg" alt="Health and beauty" />
+                <p>Health and beauty</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card32.jpg" alt="Sports" />
+                <p>Sports</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 3 -->
+
+        <!-- Column 4: deals on top categories -->
+        <div class="card-col">
+          <div class="big-column DevBox">
+            <h3>Deals on top categories</h3>
+            <!-- Small row 1 of the deals card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card17.jpg" alt="Books" />
+                <p>Books</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card18.jpg" alt="Fashion" />
+                <p>Fashion</p>
+              </div>
+            </div>
+            <!-- Small row 2 of the deals card -->
+            <div class="tiny-row clearfix">
+              <div class="tiny-item">
+                <img src="img/card19.jpg" alt="PC" />
+                <p>PC</p>
+              </div>
+              <div class="tiny-item">
+                <img src="img/card20.jpg" alt="Beauty" />
+                <p>Beauty</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of column 4 -->
+      </div>
+    </div>
+    <!-- End of Block 5: category card row 2 -->
+
+    <!-- Block 6: Back to top bar - full-width strip whose link jumps back to the top of the page -->
+    <div class="footer">
+      <a href="#page-top">Back to top</a>
+    </div>
+    <!-- End of Block 6: back to top bar -->
+
+    <!-- Block 7: Footer link columns - four floated link columns inside the centred container -->
+    <div class="footer-main">
+      <div class="container clearfix">
+        <!-- Column 1: Get to Know Us links -->
+        <div class="footer-col">
+          <h4>Get to Know Us</h4>
+          <ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About Amazon</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Amazon Devices</a></li>
+            <li><a href="#">Amazon Science</a></li>
+          </ul>
+        </div>
+        <!-- End of column 1 -->
+
+        <!-- Column 2: Make Money with Us links -->
+        <div class="footer-col">
+          <h4>Make Money with Us</h4>
+          <ul>
+            <li><a href="#">Sell products on Amazon</a></li>
+            <li><a href="#">Sell on Amazon Business</a></li>
+            <li><a href="#">Sell apps on Amazon</a></li>
+            <li><a href="#">Become an Affiliate</a></li>
+            <li><a href="#">Advertise Your Products</a></li>
+            <li><a href="#">Self-Publish with Us</a></li>
+            <li><a href="#">Host an Amazon Hub</a></li>
+            <li><a href="#" class="see-more">&#8250; See More Make Money with Us</a></li>
+          </ul>
+        </div>
+        <!-- End of column 2 -->
+
+        <!-- Column 3: Amazon Payment Products links -->
+        <div class="footer-col">
+          <h4>Amazon Payment Products</h4>
+          <ul>
+            <li><a href="#">Amazon Business Card</a></li>
+            <li><a href="#">Shop with Points</a></li>
+            <li><a href="#">Reload Your Balance</a></li>
+            <li><a href="#">Amazon Currency Converter</a></li>
+          </ul>
+        </div>
+        <!-- End of column 3 -->
+
+        <!-- Column 4: Let Us Help You links -->
+        <div class="footer-col">
+          <h4>Let Us Help You</h4>
+          <ul>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Your Orders</a></li>
+            <li><a href="#">Shipping Rates &amp; Policies</a></li>
+            <li><a href="#">Returns &amp; Replacements</a></li>
+            <li><a href="#">Manage Your Content and Devices</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <!-- End of column 4 -->
+      </div>
+    </div>
+    <!-- End of Block 7: footer link columns -->
+
+    <!-- Block 8: Footer brand bar - centred logo and language / currency / country selectors -->
+    <div class="footer-brand">
+      <div>
+        <!-- Amazon text logo shown on the left of the selector row -->
+        <a href="#" class="brand-logo">amazon</a>
+        <!-- Language selector -->
+        <button type="button" class="brand-btn">&#127760; English &#9662;</button>
+        <!-- Currency selector -->
+        <button type="button" class="brand-btn">HK$ HKD - Hong Kong Dollar</button>
+        <!-- Country selector -->
+        <button type="button" class="brand-btn">&#127482;&#127480; United States</button>
+      </div>
+    </div>
+    <!-- End of Block 8: footer brand bar -->
+
+    <!-- Block 9: Footer link grid - seven floated columns of small product links -->
+    <div class="footer-grid">
+      <div class="container clearfix">
+        <!-- Grid column 1: music, business and streaming services -->
+        <div class="grid-col">
+          <a href="#" class="grid-item">
+            <span class="grid-title">Amazon Music</span>
+            <span class="grid-desc">Stream millions of songs</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Amazon Business</span>
+            <span class="grid-desc">Everything for Your Business</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">IMDbPro</span>
+            <span class="grid-desc">Get Info Entertainment Professionals Need</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">eero WiFi</span>
+            <span class="grid-desc">Stream 4K Video in Every Room</span>
+          </a>
+        </div>
+        <!-- End of grid column 1 -->
+
+        <!-- Grid column 2: advertising, global shipping and publishing -->
+        <div class="grid-col">
+          <a href="#" class="grid-item">
+            <span class="grid-title">Amazon Ads</span>
+            <span class="grid-desc">Reach customers wherever they spend their time</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">AmazonGlobal</span>
+            <span class="grid-desc">Ship Orders Internationally</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Kindle Direct Publishing</span>
+            <span class="grid-desc">Indie Digital &amp; Print Publishing Made Easy</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Blink</span>
+            <span class="grid-desc">Smart Security for Every Home</span>
+          </a>
+        </div>
+        <!-- End of grid column 2 -->
+
+        <!-- Grid column 3: deals, cloud services and video -->
+        <div class="grid-col">
+          <a href="#" class="grid-item">
+            <span class="grid-title">6pm</span>
+            <span class="grid-desc">Score deals on fashion brands</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Amazon Web Services</span>
+            <span class="grid-desc">Scalable Cloud Computing Services</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Prime Video Direct</span>
+            <span class="grid-desc">Video Distribution Made Easy</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Neighbors App</span>
+            <span class="grid-desc">Real-Time Crime &amp; Safety Alerts</span>
+          </a>
+        </div>
+        <!-- End of grid column 3 -->
+
+        <!-- Grid column 4: books, audio and shopping -->
+        <div class="grid-col">
+          <a href="#" class="grid-item">
+            <span class="grid-title">AbeBooks</span>
+            <span class="grid-desc">Books, art &amp; collectibles</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Audible</span>
+            <span class="grid-desc">Listen to Books &amp; Original Audio Performances</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Shopbop</span>
+            <span class="grid-desc">Designer Fashion Brands</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">PillPack</span>
+            <span class="grid-desc">Pharmacy Simplified</span>
+          </a>
+        </div>
+        <!-- End of grid column 4 -->
+
+        <!-- Grid column 5: audio publishing and movie data -->
+        <div class="grid-col">
+          <a href="#" class="grid-item">
+            <span class="grid-title">ACX</span>
+            <span class="grid-desc">Audiobook Publishing Made Easy</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Box Office Mojo</span>
+            <span class="grid-desc">Find Movie Box Office Data</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Woot!</span>
+            <span class="grid-desc">Deals and Shenanigans</span>
+          </a>
+        </div>
+        <!-- End of grid column 5 -->
+
+        <!-- Grid column 6: selling and review services -->
+        <div class="grid-col">
+          <a href="#" class="grid-item">
+            <span class="grid-title">Sell on Amazon</span>
+            <span class="grid-desc">Start a Selling Account</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Goodreads</span>
+            <span class="grid-desc">Book reviews &amp; recommendations</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Zappos</span>
+            <span class="grid-desc">Shoes &amp; Clothing</span>
+          </a>
+        </div>
+        <!-- End of grid column 6 -->
+
+        <!-- Grid column 7: shipping, movie and smart home services -->
+        <div class="grid-col">
+          <a href="#" class="grid-item">
+            <span class="grid-title">Veeqo</span>
+            <span class="grid-desc">Shipping Software Inventory Management</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">IMDb</span>
+            <span class="grid-desc">Movies, TV &amp; Celebrities</span>
+          </a>
+          <a href="#" class="grid-item">
+            <span class="grid-title">Ring</span>
+            <span class="grid-desc">Smart Home Security Systems</span>
+          </a>
+        </div>
+        <!-- End of grid column 7 -->
+      </div>
+    </div>
+    <!-- End of Block 9: footer link grid -->
+
+    <!-- Block 10: Footer legal strip - centred legal links and the copyright line -->
+    <div class="footer-legal">
+      <div class="legal-links">
+        <a href="#">Conditions of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Consumer Health Data Privacy Disclosure</a>
+        <a href="#">Your Ads Privacy Choices</a>
+      </div>
+      <p class="legal-copy">&copy; 1996-2026, Amazon.com, Inc. or its affiliates</p>
+    </div>
+    <!-- End of Block 10: footer legal strip -->
+  </body>
+</html>
