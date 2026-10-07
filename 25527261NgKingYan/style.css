@@ -1,0 +1,462 @@
+/* student Name: Ng King Yan */
+/* Student ID: 25527261  */
+/* GitHub link: https://github.com/NG20041024/AmazonBuild */
+
+/* ==========================================================================
+   Amazon homepage clone - style sheet
+   Rules are grouped in page order:
+   1. reset          2. layout helpers   3. top navigation bar
+   4. secondary bar  5. banner strip     6. category cards     7. footer
+   Vertical stacking uses normal flow; horizontal rows use float + box model.
+   ========================================================================== */
+
+/* Reset: universal selector clears the default inner and outer margin of every element */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Page base: light grey page background and the default font used by the whole document */
+body {
+  background-color: #eaeded; /* Amazon page background colour */
+  color: #0f1111; /* default dark text colour */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Links: shared rule that removes the browser underline everywhere; each block sets its own colour */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Images: block display removes the small inline gap under pictures and lets them fill their box */
+img {
+  display: block;
+  width: 100%;
+}
+
+/* Clearfix: double pseudo-element that closes a floated parent's height (float-clearing method 3) */
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: block;
+}
+.clearfix::after {
+  clear: both; /* drops the generated box below all floats in the row */
+}
+
+/* Centred container: fixed 1200px content width centred horizontally with margin: 0 auto */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* Extra clearing tag: empty div used after a floated row to push the parent's height back down (float-clearing method 1) */
+.clear {
+  clear: both;
+}
+
+/* DevBox: development helper class that paints each layout panel white so block edges stay visible while testing */
+.DevBox {
+  background-color: #ffffff;
+}
+
+/* Top navigation links and secondary bar links: union selector giving both bars the same white text */
+.top-nav a,
+.sub-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Top navigation bar: full-width black strip that holds the logo, search box and account links */
+.top-nav {
+  width: 100%;
+  background-color: #131921; /* Amazon top-bar black */
+  color: #ffffff;
+  padding: 8px 0;
+}
+
+/* Top navigation inner wrapper: clears the floated logo, search bar and right-hand links with overflow hidden (float-clearing method 2) */
+.nav-inner {
+  overflow: hidden;
+  padding: 0 12px; /* keeps the strip content away from the screen edge */
+}
+
+/* Account / Returns / Cart group: floated to the right edge, overflow hidden wraps its own floated links */
+.nav-right {
+  float: right;
+  overflow: hidden;
+}
+
+/* Individual top-bar link: shared box model so the hover border does not move the text */
+.nav-item {
+  float: left;
+  color: #ffffff;
+  padding: 4px 8px; /* inner spacing around each link */
+  border: 1px solid transparent; /* reserved 1px border keeps hover from shifting the layout */
+}
+
+/* Two-line top-bar link caption: small text shown above the bold label */
+.nav-item .caption {
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/* Two-line top-bar link label: bold main text of the link */
+.nav-item .label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+/* Logo: text logo floated to the left of the top bar */
+.logo {
+  float: left;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 40px; /* matches the height of the top bar content */
+  padding: 0 12px 0 0;
+}
+
+/* Delivery block: extra left padding separates the destination text from the logo */
+.deliver-to {
+  padding-left: 12px;
+}
+
+/* Top-bar hover: pseudo-class that draws Amazon's thin white outline around the hovered item */
+.nav-item:hover,
+.logo:hover {
+  border: 1px solid #ffffff;
+}
+/* Search bar: floated block with a fixed 460px width that groups the text field and the search button */
+.search-bar{
+  float: left;
+  width: 460px;
+  overflow:hidden;/* closes the height of its own floated children */
+  margin: 4px 0 0 16px; /* pushes the bar away from the delivery block */
+}
+
+/* Search text field (id selector): 398px content width plus 16px padding keeps the whole bar at 460px */
+#searchInput {
+  float: left;
+  width: 398px;
+  height: 38px;
+  border: none;
+  padding: 0 8px; /* horizontal inner spacing only, so the height stays 38px */
+  font-size: 14px;
+}
+
+/* Search submit button: 46px yellow block that closes the right end of the search bar */
+.search-bar button {
+  float: left;
+  width: 46px;
+  height: 38px;
+  border: none;
+  background-color: #febd69; /* Amazon search button yellow */
+  font-size: 16px;
+}
+
+/* Search button hover: darker yellow when the pointer is over the button (pseudo-class selector) */
+.search-bar button:hover {
+  background-color: #f3a847;
+}
+
+/* Secondary navigation bar: full-width dark blue strip below the top bar */
+.sub-nav {
+  width: 100%;
+  background-color: #232f3e; /* Amazon second-bar dark blue */
+  color: #fff
+  padding: 4px 12px;
+  overflow: hidden; /* clears the floated "All" button and category list */
+}
+
+/* "All" menu button: floated to the left of the secondary bar */
+.all-menu {
+  float: left;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+}
+
+/* Category list: removes the default bullets so the items can be floated as a menu strip */
+.sub-menu {
+  list-style: none;
+  float: left;
+}
+
+/* Category list items: each one floated horizontally into the same row */
+.sub-menu li {
+  float: left;
+}
+
+/* Category links: block links with padding so the whole label area is clickable */
+.sub-menu li a {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+}
+
+/* Secondary bar hover: white outline appears around the hovered category (pseudo-class selector) */
+.all-menu:hover,
+.sub-menu li a:hover {
+  border: 1px solid #ffffff;
+}
+
+/* Banner strip: normal-flow wrapper that holds five floated promo cards and their clearing tag */
+.banner-row {
+  padding: 16px 0; /* vertical spacing above and below the strip */
+}
+
+/* Promo banner card: five floated cards, each 19.2% wide plus 0.4% side margin, totalling 100% of the row */
+.banner-card {
+  float: left;
+  width: 19.2%;
+  margin: 0 0.4%;
+  background-color: #ffffff;
+}
+
+/* Banner card body: inner padding keeps the picture and text away from the card edge */
+.banner-body {
+  padding: 10px;
+}
+
+/* Banner picture: fixed 150px height lines all five banners up into one even strip */
+.banner-body img {
+  height: 150px;
+}
+
+/* Banner heading: spacing below the picture and above the caption */
+.banner-body h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+/* Banner caption: smaller grey supporting line under each banner heading */
+.banner-body p {
+  font-size: 13px;
+  color: #565959;
+}
+
+/* Category card row: normal-flow wrapper that clears its four floated columns with the clearfix class */
+.card-row {
+  padding-bottom: 16px; /* vertical gap between one card row and the next */
+}
+
+/* Category column: floated 23.5% column with 0.75% side margins, four columns fill the 1200px container */
+.card-col {
+  float: left;
+  width: 23.5%;
+  margin: 0 0.75%;
+}
+
+/* Category panel: white box whose 16px padding sets the space between card edge and content */
+.big-column {
+  padding: 16px;
+}
+
+/* Category title: child selector spacing between the panel heading and the first small row */
+.big-column > h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Small picture row: normal-flow wrapper that clears its two floated tiny items */
+.tiny-row {
+  margin-bottom: 10px;
+}
+
+/* Tiny picture item: floated 48% box with 1% side margins, so two items fill one small row */
+.tiny-item {
+  float: left;
+  width: 48%;
+  margin: 0 1%;
+}
+
+/* Tiny picture caption: centred small text underneath each product picture */
+.tiny-item p {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Back to top bar: full-width lighter strip whose link jumps back to the top of the page */
+.footer {
+  width: 100%;
+  background-color: #37475a; /* Amazon back-to-top bar colour */
+  color: #ffffff;
+  text-align: center; /* centres the back-to-top link */
+  padding: 16px 0;
+}
+
+/* Back to top link: inline-block so padding and the hover underline behave like a button */
+.footer a {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Back to top link hover: underline appears when the pointer is over the link (pseudo-class selector) */
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Footer link columns strip: full-width dark blue band that carries the four main link columns */
+.footer-main {
+  width: 100%;
+  background-color: #232f3e; /* Amazon footer link-columns colour */
+  padding: 40px 0;
+}
+
+/* Footer column: four floated 25% columns fill the centred container in one row */
+.footer-col {
+  float: left;
+  width: 25%;
+}
+
+/* Footer column heading: white bold title above each group of links */
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+/* Footer column list: removes the default bullets so the links can stack as a plain list */
+.footer-col ul {
+  list-style: none;
+}
+
+/* Footer column links: light grey block links with even vertical spacing between the items */
+.footer-col li a {
+  display: block;
+  color: #dddddd;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+/* Footer column link hover: underline appears on the hovered link (pseudo-class selector) */
+.footer-col li a:hover {
+  text-decoration: underline;
+}
+
+/* "See more" link: white text that stands out from the normal footer links */
+.footer-col li a.see-more {
+  color: #ffffff;
+}
+
+/* Footer brand bar: dark strip with a top divider that holds the centred logo and selectors */
+.footer-brand {
+  width: 100%;
+  background-color: #232f3e;
+  border-top: 1px solid #3a4553; /* thin divider above the selector row */
+  padding: 22px 0;
+  text-align: center; /* inline-block children are centred horizontally */
+}
+
+/* Brand logo: white text logo shown inline with the region selectors */
+.brand-logo {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  vertical-align: middle; /* lines the logo up with the buttons beside it */
+  margin-right: 40px;
+}
+
+/* Region button: outlined box shared by the language, currency and country selectors */
+.brand-btn {
+  display: inline-block;
+  vertical-align: middle; /* keeps all three buttons on one line */
+  border: 1px solid #848688;
+  background-color: transparent;
+  color: #dddddd;
+  font-family: inherit; /* buttons do not inherit the page font by default */
+  font-size: 13px;
+  padding: 6px 12px;
+  margin: 0 6px; /* gap between the neighbouring selectors */
+}
+
+/* Region button hover: border turns white when the pointer is over a selector (pseudo-class selector) */
+.brand-btn:hover {
+  border: 1px solid #ffffff;
+}
+
+/* Footer link grid: darkest strip that carries the seven columns of small product links */
+.footer-grid {
+  width: 100%;
+  background-color: #131a22; /* Amazon footer grid colour */
+  padding: 30px 0;
+}
+
+/* Grid column: seven floated 14.28% columns fill the centred container in one row */
+.grid-col {
+  float: left;
+  width: 14.28%;
+}
+
+/* Grid item: block link that stacks a bold title above a grey description */
+.grid-item {
+  display: block;
+  margin-bottom: 18px;
+}
+
+/* Grid item title: light grey bold product name */
+.grid-title {
+  display: block;
+  color: #dddddd;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Grid item description: darker grey line describing the linked product */
+.grid-desc {
+  display: block;
+  color: #999999;
+  font-size: 12px;
+}
+
+/* Grid item hover: both the title and description underline together when the pointer is over the item (pseudo-class selector) */
+.grid-item:hover {
+  text-decoration: underline;
+}
+
+/* Footer legal strip: darkest band with the centred legal links and copyright line */
+.footer-legal {
+  width: 100%;
+  background-color: #131a22;
+  border-top: 1px solid #3a4553; /* thin divider above the legal links */
+  text-align: center; /* centres the legal links and the copyright */
+  padding: 14px 0 24px;
+}
+
+/* Legal links: small light grey links separated by horizontal spacing */
+.legal-links a {
+  display: inline-block;
+  color: #dddddd;
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+/* Legal link hover: underline appears on the hovered legal link (pseudo-class selector) */
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+/* Copyright line: small grey text underneath the legal links */
+.legal-copy {
+  color: #dddddd;
+  font-size: 12px;
+  margin-top: 10px;
+}
